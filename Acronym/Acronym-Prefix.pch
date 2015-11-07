@@ -1,0 +1,20 @@
+//
+//  Acronym-Prefix.pch
+//  Acronym
+//
+//  Created by Saranya's Workstation on 11/7/15.
+//  Copyright © 2015 Saranya's Workstation. All rights reserved.
+//
+
+//typedef void (^ROPWebRequestManagerCompletion)(NSDictionary *resultDict ,NSError *error);
+
+
+
+#import <AFNetworking/AFHTTPSessionManager.h>
+#import "MBProgressHUD.h"
+#import "AcronymWebRequestManager.h"
+
+
+// REST API MAIN URL
+#define MAINURL  "http://www.nactem.ac.uk/software/acromine/dictionary.py"
+

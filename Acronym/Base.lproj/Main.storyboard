@@ -1,25 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oPS-3m-782">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Acronym-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="SearchDisplayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="A7Z-GT-lVu">
+                                <rect key="frame" x="-4" y="64" width="328" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Ox0-8X-are"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A7Z-GT-lVu" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="JKl-1a-Wwg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A7Z-GT-lVu" secondAttribute="trailing" constant="-20" id="Jp4-M8-qqj"/>
+                            <constraint firstItem="A7Z-GT-lVu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="YLc-hW-Ufj"/>
+                            <constraint firstItem="A7Z-GT-lVu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="slc-5O-ZBF"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Acronym" id="kav-ND-TA8"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Bzo-QY-hfW" id="tQ8-Ie-qsf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Bzo-QY-hfW">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="MzE-1j-8Ih"/>
+                        <outlet property="searchBar" destination="A7Z-GT-lVu" id="e4P-JJ-wjG"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="VIw-XS-dKe"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="eKb-wg-iAl"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="w0v-il-akB"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="125" y="248"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n1t-jc-g3W">
+            <objects>
+                <navigationController id="oPS-3m-782" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Jb-IL-R1r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="mpS-6A-TRM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUi-tS-YiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-283" y="248"/>
         </scene>
     </scenes>
 </document>
